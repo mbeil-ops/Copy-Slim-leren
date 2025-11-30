@@ -114,17 +114,34 @@ const App: React.FC = () => {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50 print:hidden">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           
-          {/* Left: Compact Video Button */}
-          <button 
-            onClick={() => setIsVideoModalOpen(true)}
-            className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group"
-            title="Bekijk de kennisclip"
-          >
-            <div className="bg-excel-orange text-white rounded-full p-1.5 shadow-sm group-hover:scale-110 transition-transform">
-              <Play size={12} fill="currentColor" />
-            </div>
-            <span className="font-medium">Kennisclip</span>
-          </button>
+          {/* Left: Buttons Group */}
+          <div className="flex items-center gap-6">
+            {/* Kennisclip Button */}
+            <button 
+              onClick={() => setIsVideoModalOpen(true)}
+              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group"
+              title="Bekijk de kennisclip"
+            >
+              <div className="bg-excel-orange text-white rounded-full p-1.5 shadow-sm group-hover:scale-110 transition-transform">
+                <Play size={12} fill="currentColor" />
+              </div>
+              <span className="font-medium">Kennisclip</span>
+            </button>
+
+            {/* AI Docenten Button */}
+            <a 
+              href="https://www.aivoorleerlingen.nl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group"
+              title="Ga naar AI docenten"
+            >
+              <div className="bg-excel-dark text-white rounded-full w-6 h-6 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform text-[10px] font-bold leading-none">
+                AI
+              </div>
+              <span className="font-medium">AI docenten</span>
+            </a>
+          </div>
 
           {/* Right: Subtle Download Button */}
           <div className="flex items-center gap-4">
@@ -210,29 +227,6 @@ const App: React.FC = () => {
                 );
               })}
             </div>
-          </div>
-
-          {/* Video Button Section - Hidden on Print */}
-          <div className="mb-12 print:hidden flex justify-center">
-            <button
-              onClick={() => setIsVideoModalOpen(true)}
-              className="group relative w-full max-w-2xl bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-excel-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="p-8 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="flex-shrink-0 w-16 h-16 bg-excel-orange rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                  <Play className="text-white fill-white ml-1" size={32} />
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-excel-teal transition-colors">
-                    Kennisclip slim studeren
-                  </h2>
-                  <p className="text-slate-600">
-                    Bekijk de video voor een visuele uitleg van de effectieve leerstrategieën.
-                  </p>
-                </div>
-              </div>
-            </button>
           </div>
 
         </main>
@@ -335,7 +329,7 @@ const App: React.FC = () => {
               <div className="mt-8 pt-4 border-t border-gray-100 flex justify-end print:hidden">
                 <button 
                   onClick={() => setSelectedStrategyId(null)}
-                  className="bg-excel-teal hover:bg-excel-dark text-white px-6 py-3 rounded-lg font-semibold transition-colors shadow-lg shadow-excel-teal/30"
+                  className="bg-excel-teal hover:brightness-90 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-excel-teal/30"
                 >
                   Ik snap het!
                 </button>
@@ -442,9 +436,13 @@ const App: React.FC = () => {
             {/* The Screen Area */}
             <div className="screen-frame">
               <iframe 
-                src="https://www.youtube.com/embed/3LxSjpqOu_M" 
+                width="560" 
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/3LxSjpqOu_M" 
                 title="YouTube video player" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
             </div>

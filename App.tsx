@@ -108,6 +108,10 @@ const App: React.FC = () => {
     doc.save("studiekaarten.pdf");
   };
 
+  // Shared button styles for header actions
+  const headerBtnClass = "flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group";
+  const iconBaseClass = "text-white rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform";
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans flex flex-col print:bg-white">
       {/* Header */}
@@ -119,10 +123,10 @@ const App: React.FC = () => {
             {/* Kennisclip Button */}
             <button 
               onClick={() => setIsVideoModalOpen(true)}
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group"
+              className={headerBtnClass}
               title="Bekijk de kennisclip"
             >
-              <div className="bg-excel-orange text-white rounded-full p-1.5 shadow-sm group-hover:scale-110 transition-transform">
+              <div className={`${iconBaseClass} bg-excel-orange p-1.5`}>
                 <Play size={12} fill="currentColor" />
               </div>
               <span className="font-medium">Kennisclip</span>
@@ -133,10 +137,10 @@ const App: React.FC = () => {
               href="https://www.aivoorleerlingen.nl"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group"
+              className={headerBtnClass}
               title="Ga naar AI docenten"
             >
-              <div className="bg-excel-dark text-white rounded-full w-6 h-6 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform text-[10px] font-bold leading-none">
+              <div className={`${iconBaseClass} bg-excel-teal w-6 h-6 text-[10px] font-bold leading-none`}>
                 AI
               </div>
               <span className="font-medium">AI docenten</span>
@@ -151,10 +155,10 @@ const App: React.FC = () => {
               download="Studeerkaarten bundel.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-excel-teal transition-colors group"
+              className={headerBtnClass}
               title="Download de studiekaarten bundel"
             >
-              <div className="bg-excel-teal text-white rounded-full p-1.5 shadow-sm group-hover:scale-110 transition-transform">
+              <div className={`${iconBaseClass} bg-excel-teal p-1.5`}>
                 <Download size={12} />
               </div>
               <span className="font-medium hidden sm:inline">Download Studeerkaarten Bundel</span>
@@ -438,13 +442,13 @@ const App: React.FC = () => {
               <iframe 
                 width="560" 
                 height="315"
-                src="https://www.youtube-nocookie.com/embed/3LxSjpqOu_M" 
+                src="https://www.youtube-nocookie.com/embed/3LxSjpqOu_M?autoplay=0&controls=1&rel=0&modestbranding=1" 
                 title="YouTube video player" 
-                frameBorder="0"
+                frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+                allowFullScreen>
+              </iframe>
             </div>
 
             {/* Bottom Details */}

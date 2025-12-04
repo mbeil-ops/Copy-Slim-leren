@@ -1,3 +1,4 @@
+
 import { Category, Strategy, SubjectTip } from './types';
 
 export const STRATEGIES: Strategy[] = [
@@ -5,16 +6,20 @@ export const STRATEGIES: Strategy[] = [
     id: 'flashcards',
     title: 'Flashcards',
     category: Category.TEST_JEZELF,
-    shortDescription: 'Oefenkaartjes met vraag op voorkant, antwoord op achterkant.',
+    shortDescription: 'Oefenkaartjes met op de ene kant een concept/vraag en op de andere kant de verklaring/antwoord.',
     howTo: [
-      'Maak kaartjes: Begrip/Vraag voorop, Definitie/Antwoord achterop.',
+      'Neem een stapel kaartjes (ca. 20) of gebruik een app.',
+      'Lees het begrip of de vraag op de ene kant.',
+      'Formuleer het antwoord of noteer het op een kladblad.',
       'Draai het kaartje om en controleer je antwoord.',
-      'Werk de stapel af tot je alles kent.',
-      'Tip: Gebruik tools zoals Quizlet, NotebookLM of papieren kaartjes.'
+      'Laat alle kaartjes in de stapel zitten, zelfs die waarvoor je een juist antwoord formuleerde. Werk de stapel af tot je elk kaartje minstens één keer correct hebt beantwoord.',
+      'Herhaal tijdens een volgende studiesessie dezelfde stapel kaartjes, maar verander de volgorde.',
+      'Als je minstens drie keer het juiste antwoord kon formuleren in verschillende sessies, mag je het kaartje even uit de stapel halen. Voeg het bij een groter herhalingsmoment weer toe.'
     ],
+    attention: 'Voor sommige onderdelen (woordenschat, formules) moet je het antwoord opschrijven om de spelling te controleren. Gebruik flashcards niet alleen voor feiten, maar ook om verbanden te leggen (bijv. toetsvragen op de kaartjes).',
     iconName: 'Layers',
     actionButton: {
-      label: 'Maak online flashcards',
+      label: 'Maak & Print Flashcards',
       url: 'https://flashcards-maken-app.vercel.app/'
     }
   },
@@ -22,118 +27,143 @@ export const STRATEGIES: Strategy[] = [
     id: 'braindump',
     title: 'Braindumps',
     category: Category.TEST_JEZELF,
-    shortDescription: 'Schrijf alles op wat je weet op een leeg blad zonder te spieken.',
+    shortDescription: 'Neem een leeg blad en noteer alles wat je je herinnert over een bepaald onderwerp. Je dumpt je geheugen op papier.',
     howTo: [
-      'Neem een leeg vel papier.',
-      'Schrijf het onderwerp in het midden.',
-      'Noteer in 3-5 minuten alles wat je je herinnert.',
-      'Pak daarna je boek erbij en vul aan met een andere kleur pen.'
+      'Sluit je boek.',
+      'Wacht enkele minuten of - beter - uren.',
+      'Neem een leeg blad papier.',
+      'Noteer het lesonderwerp of de titel waarover je jezelf wil testen.',
+      'Geef jezelf 3 à 5 minuten de tijd om alles te noteren wat je je herinnert. Gebruik losse woorden, korte zinnen, een mindmap of tekeningen/symbolen.',
+      'Geef niet te snel op, blijf nadenken. Er komt vast nog meer bovendrijven.',
+      'Neem je boek erbij en controleer. Belangrijke begrippen die je was vergeten, vul je aan met een andere kleur pen.'
     ],
+    attention: 'Het is niet erg als je je niet onmiddellijk veel herinnert. Als je nadien je boeken erbij neemt en jezelf controleert, blijft de nieuwe leerstof nog zo gemakkelijk kleven!',
     iconName: 'Brain'
   },
   {
     id: 'vragen',
     title: 'Jezelf Vragen Stellen',
     category: Category.HERKNEED,
-    shortDescription: 'Bedenk vragen bij de stof (Wie, Wat, Waar, Waarom, Hoe).',
+    shortDescription: 'Je herkneedt de leerstof door er vragen bij te bedenken die je daarna gedetailleerd beantwoordt.',
     howTo: [
-      'Lees een stuk tekst.',
-      'Stel vragen: Waarom is dit zo? Hoe werkt dit?',
-      'Verbind het met wat je al weet.',
-      'Schrijf de vragen op en gebruik ze later als oefentoets.'
+      'Vertrek vanuit je lesmateriaal en krijg zicht op de structuur (inhoudsopgave, titels).',
+      'Lees een aantal alinea’s of bekijk een deel van een video.',
+      'Stel jezelf vragen over wat je net hebt gelezen (Wie, Wat, Waarom, Wanneer, Waar, Hoe?). Zoek naar verschillen en overeenkomsten.',
+      'Noteer de vragen in een samenvatting, op flashcards of in de kantlijn van je boek.',
+      'Formuleer een uitgebreid antwoord (mondeling of schriftelijk) zonder te spieken. Schrijf antwoorden niet direct bij de vragen.',
+      'Controleer je antwoord en vul aan indien nodig.',
+      'Gebruik de vragen om jezelf bij een volgende studiesessie opnieuw te toetsen.'
     ],
+    attention: 'Stel vragen die overeenkomen met wat je eigenlijk moet leren. Als het gaat om toepassen van concepten, stel dan niet enkel kennisvragen.',
     iconName: 'MessageCircleQuestion'
   },
   {
     id: 'tekenen',
     title: 'Tekenen',
     category: Category.HERKNEED,
-    shortDescription: 'Maak processen visueel door ze te tekenen.',
+    shortDescription: 'Je maakt een tekening tijdens het verwerken van de leerstof om een proces of concept te verduidelijken.',
     howTo: [
-      'Lees de tekst of bekijk de video.',
-      'Sluit je boek.',
-      'Teken het proces of concept uit je hoofd.',
-      'Controleer met het boek of je tekening klopt.'
+      'Vertrek vanuit je lesmateriaal en krijg zicht op de structuur.',
+      'Lees een aantal alinea’s grondig door.',
+      'Sluit je boek en wacht liefst een aantal minuten. Verwerk wat je gelezen hebt in een tekening. Combineer woord en beeld.',
+      'Gebruik de tekening daarna om voor jezelf het proces of concept te verklaren (zie strategie "Uitleggen").',
+      'Controleer of je tekening (en eventuele verklaring) juist en volledig is.'
     ],
+    attention: 'De focus ligt op het leren. Hoe mooi je tekening is, is niet van belang. Verspil hier geen tijd aan.',
     iconName: 'PenTool'
   },
   {
     id: 'uitleggen',
     title: 'Uitleggen',
     category: Category.HERKNEED,
-    shortDescription: 'Leg de stof uit aan jezelf of iemand anders.',
+    shortDescription: 'Je legt de leerstof (oefening, begrip of proces) uit aan iemand anders of aan jezelf. Dit verplicht je om diep na te denken.',
     howTo: [
-      'Doe alsof je docent bent.',
-      'Leg het hardop uit in simpele taal.',
-      'Als je vastloopt, weet je welk stuk je nog moet bestuderen.'
+      'Vertrek vanuit je lesmateriaal (tekst, oefening of video).',
+      'Lees een aantal alinea’s grondig door.',
+      'Verklaar aan jezelf (of een ander) wat er staat. Doe dit per alinea in eigen woorden, zonder te spieken. Bij oefeningen: redeneer hardop bij elke stap.',
+      'Controleer je verklaring of uitleg op basis van je lesmateriaal.'
     ],
+    attention: 'Het gaat hier om uitleggen en verklaren met veel details, niet om enkel herformuleren (en al zeker niet om overschrijven of aflezen).',
     iconName: 'Mic'
   },
   {
     id: 'mappen',
     title: 'Mappen (Mindmap)',
     category: Category.HERKNEED,
-    shortDescription: 'Maak schema’s om verbanden te zien.',
+    shortDescription: 'Je maakt een visueel schema dat de verbanden in je leerstof duidelijk maakt (mindmap, schema, tabel).',
     howTo: [
-      'Zet het hoofdonderwerp in het midden.',
-      'Maak takken voor deelonderwerpen.',
-      'Gebruik kleuren en lijnen om relaties aan te geven.',
-      'Doe dit bij voorkeur uit je hoofd (als test).'
+      'Vertrek vanuit het lesmateriaal en bekijk de structuur.',
+      'Laat de leerstof rusten voor een paar minuten (of uren).',
+      'Neem een leeg blad. Noteer het hoofdonderwerp in het midden en de kerngedachten daarrond.',
+      'Voeg per kerngedachte vertakkingen toe met begrippen en voorbeelden. Benoem de verbanden.',
+      'Ga niet overschrijven! Lees een stukje, denk na, en bouw zo je map op.',
+      'Controleer met je lesmateriaal: staan de belangrijkste concepten en verbanden erin?'
     ],
+    attention: 'Combineer deze strategie met zelftesten, pas dan is ze echt effectief. Als je gewoon leerstof overschrijft, is het weggegooide tijd.',
     iconName: 'Network'
   },
   {
     id: 'cornell',
     title: 'Cornell Methode',
     category: Category.HERKNEED,
-    shortDescription: 'Gestructureerd samenvatten met een test-kolom.',
+    shortDescription: 'Je maakt een samenvatting waarbij je kernvragen en een korte samenvatting toevoegt om jezelf later te testen.',
     howTo: [
-      'Verdeel je blad in: Linkerkolom (kernwoorden), Rechterkolom (notities), Onderkant (samenvatting).',
-      'Dek rechts af en test jezelf met de linkerkolom.',
-      'Vat onderaan de les samen in 2 zinnen.'
+      'Verdeel je blad in drie delen: een brede rechterkolom, een smalle linkerkolom en een vlak onderaan.',
+      'Noteer bovenaan het onderwerp.',
+      'Maak tijdens het lezen/luisteren beknopte aantekeningen in de rechterkolom (schema\'s, kernwoorden).',
+      'Noteer daarna in de linkerkolom vragen of kernwoorden die aansluiten bij de notities rechts.',
+      'Vat de kern van de les kort samen in het vlak onderaan (2 zinnen).',
+      'Dek de rechterkolom af en test jezelf aan de hand van de linkerkolom.',
+      'Controleer je antwoord.',
+      'Herhaal dit testen bij volgende studiesessies.'
     ],
+    attention: 'Verval niet in overschrijven, zorg dat het een actief proces is. De grootste leerwinst zit in wat je nadien met de samenvatting doet: jezelf testen.',
     iconName: 'FileText'
   },
   {
     id: 'voorbeelden',
     title: 'Uitgewerkte Voorbeelden',
     category: Category.OEFEN_SLIM,
-    shortDescription: 'Bestudeer stap-voor-stap oplossingen.',
+    shortDescription: 'Een oefening waarbij de oplossing helemaal is uitgewerkt en stappen verklaard worden.',
     howTo: [
-      'Bekijk een volledig uitgewerkte som of antwoord.',
-      'Analyseer elke stap: Waarom doen ze dit?',
-      'Dek de oplossing af en probeer het zelf.',
-      'Vergelijk je eigen werk met het voorbeeld.'
+      'Zoek een uitgewerkt voorbeeld (in boek of video) dat toont hoe je een oefening oplost.',
+      'Bestudeer het voorbeeld nauwgezet. Begrijp de opeenvolgende stappen en verklaar waarom je ze zet.',
+      'Dek bij een volgend voorbeeld de laatste stap(pen) af en probeer zelf aan te vullen.',
+      'Probeer daarna zelfstandig te oefenen en controleer jezelf direct na elke oefening.'
     ],
+    attention: 'Uitgewerkte voorbeelden zijn vooral handig als je niet meer weet hoe je een bepaalde werkwijze moet toepassen (bijv. wiskunde, chemie, grammatica).',
     iconName: 'ListChecks'
   },
   {
     id: 'afwisselen',
-    title: 'Afwisselen (Interleaving)',
+    title: 'Afwisselen',
     category: Category.OEFEN_SLIM,
-    shortDescription: 'Wissel verschillende soorten opgaven af.',
+    shortDescription: 'Wissel af tussen verschillende types oefeningen in plaats van gegroepeerd te oefenen.',
     howTo: [
-      'Maak niet 20 sommen van type A en dan 20 van type B.',
-      'Maak: A, B, C, B, A, C.',
-      'Dit traint je brein om de juiste strategie te kiezen.'
+      'Zet de eerste stappen door een aantal oefeningen van hetzelfde type te maken (gegroepeerd) om de basis te leren.',
+      'Schakel daarna over naar afwisselend oefenen: maak oefeningen van verschillende types door elkaar.',
+      'Hierdoor moet je bij elke opgave nadenken over WELKE strategie je moet kiezen, niet alleen hoe je hem toepast.',
+      'Je hoeft niet méér te oefenen, enkel slimmer.'
     ],
+    attention: 'Dit voelt moeilijker aan omdat je dieper moet nadenken, maar dat is net de bedoeling! Het voorkomt dat je op automatische piloot werkt.',
     iconName: 'Shuffle'
   },
   {
     id: 'gespreid',
     title: 'Gespreid Studeren',
     category: Category.PLANNING,
-    shortDescription: 'Leer in korte blokken verspreid over de tijd.',
+    shortDescription: 'Studeer de leerstof tijdens verschillende momenten, zodat je het een aantal keer herhaalt.',
     howTo: [
-      'Niet stampen de avond van tevoren.',
-      'Plan: Dag 1 leren, Dag 3 herhalen, Dag 7 testen.',
-      'Herhaling zorgt dat het in je langetermijngeheugen blijft.'
+      'Bekijk je planning en bereken hoeveel tijd je hebt tot de toets.',
+      'Splits de tijd die je wil spenderen op in kleinere sessies (bijv. 3 sessies van 30 minuten i.p.v. 1 van 1,5 uur).',
+      'Plan sessies voor dezelfde leerstof met tussenpozen (bijv. dag 2, dag 5 en dag 9).',
+      'Als je weinig tijd hebt (1-2 dagen), is dit lastig, maar probeer toch pauzes in te lassen.'
     ],
+    attention: 'Kies tijdens de herhalingsmomenten voor effectieve strategieën (zoals jezelf testen). Ga niet drie keer herlezen. Het gaat om het herhalen van het *ophalen* van informatie.',
     iconName: 'CalendarClock'
   }
 ];
 
-// Data extracted from the provided HTML tables
 export const SUBJECT_TIPS: SubjectTip[] = [
   // AARDRIJKSKUNDE
   { subject: "Aardrijkskunde", strategyId: "tekenen", tip: "Teken bijv. een vulkaan, delta of waterkringloop om processen visueel te maken en beter te onthouden. Gebruik bij voorkeur alleen beeldtaal en geen tekst." },
@@ -177,7 +207,7 @@ export const SUBJECT_TIPS: SubjectTip[] = [
   // NATUURKUNDE
   { subject: "Natuurkunde", strategyId: "flashcards", tip: "Maak kaartjes met grootheden, eenheden en symbolen. Gebruik ze om formules te leren." },
   { subject: "Natuurkunde", strategyId: "tekenen", tip: "Maak bij elke vraag een schets van de situatie. Dit helpt je hersenen de stof te begrijpen." },
-  { subject: "Natuurkunde", strategyId: "mappen", tip: "Maak per paragraaf een conceptmap van alle begrippen met de bijbehorende formules." },
+  { subject: "Natuurkunde", strategyId: "mappen", tip: "Maak per paragraaf een concept map van alle begrippen met de bijbehorende formules." },
   { subject: "Natuurkunde", strategyId: "braindump", tip: "Doe een braindump direct na het lezen van een paragraaf. Herhaal dit na 1 dag." },
   { subject: "Natuurkunde", strategyId: "voorbeelden", tip: "Oefen de systematische probleemaanpak: Gegeven, Gevraagd, Formule, Berekening, Eenheid." },
 
@@ -192,6 +222,7 @@ export const SUBJECT_TIPS: SubjectTip[] = [
   { subject: "Biologie", strategyId: "vragen", tip: "Stel de vragen: Wat is de functie van het geheel? Hoe werken onderdelen samen? Wat is het nadeel als een onderdeel ontbreekt?" },
   { subject: "Biologie", strategyId: "vragen", tip: "Jojoën: Verbind processen aan organisatieniveaus (Cel -> Orgaan -> Organisme -> Ecosysteem)." },
   { subject: "Biologie", strategyId: "mappen", tip: "Maak een conceptmap waarin je verschillende biologische concepten uit het hoofdstuk verbindt." },
+  { subject: "Biologie", strategyId: "tekenen", tip: "Maak een tekening van processen zoals fotosynthese. Combineer woord en beeld; je brein verwerkt de leerstof dan twee keer." },
 
   // NEDERLANDS
   { subject: "Nederlands", strategyId: "voorbeelden", tip: "Bekijk voorbeeldteksten. Let op opbouw, signaalwoorden en argumentatie. Vergelijk jouw tekst met het model." },

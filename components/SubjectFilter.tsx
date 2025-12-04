@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { SUBJECTS, SubjectType } from '../types';
 
@@ -8,7 +9,7 @@ interface Props {
 
 export const SubjectFilter: React.FC<Props> = ({ selectedSubject, onSelect }) => {
   return (
-    <div className="w-full overflow-x-auto pb-4 pt-2 no-scrollbar">
+    <div className="w-full overflow-x-auto pb-4 pt-2 subtle-scroll">
       <div className="flex space-x-2 min-w-max px-2">
         {SUBJECTS.map((subject) => (
           <button

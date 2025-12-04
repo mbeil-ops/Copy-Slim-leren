@@ -161,7 +161,7 @@ const App: React.FC = () => {
               <div className={`${iconBaseClass} bg-excel-teal p-1.5`}>
                 <Download size={12} />
               </div>
-              <span className="font-medium hidden sm:inline">Download Studeerkaarten Bundel</span>
+              <span className="font-medium hidden sm:inline">Download Studeerkaarten</span>
               <span className="font-medium sm:hidden">Download</span>
             </a>
           </div>

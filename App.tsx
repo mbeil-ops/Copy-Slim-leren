@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import { BookOpen, Lightbulb, Download, Play, X } from 'lucide-react';
+import { BookOpen, Lightbulb, Download, Play, X, ExternalLink } from 'lucide-react';
 import { STRATEGIES, SUBJECT_TIPS } from './constants';
 import { SubjectFilter } from './components/SubjectFilter';
 import { StrategyCard } from './components/StrategyCard';
@@ -140,7 +140,7 @@ const App: React.FC = () => {
               className={headerBtnClass}
               title="Ga naar AI docenten"
             >
-              <div className={`${iconBaseClass} bg-excel-teal w-6 h-6 text-[10px] font-bold leading-none`}>
+              <div className={`${iconBaseClass} bg-black w-6 h-6 text-[10px] font-bold leading-none`}>
                 AI
               </div>
               <span className="font-medium">AI docenten</span>
@@ -330,7 +330,23 @@ const App: React.FC = () => {
               </div>
 
               {/* Footer Action */}
-              <div className="mt-8 pt-4 border-t border-gray-100 flex justify-end print:hidden">
+              <div className="mt-8 pt-4 border-t border-gray-100 flex justify-between items-center print:hidden">
+                {/* Left side: Action Button (e.g., Maak Flashcards) */}
+                <div>
+                  {activeStrategy.actionButton && (
+                    <a
+                      href={activeStrategy.actionButton.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 border-2 border-excel-teal text-excel-teal hover:bg-excel-teal hover:text-white px-4 py-2 rounded-lg font-semibold transition-colors group"
+                    >
+                      <ExternalLink size={18} />
+                      <span>{activeStrategy.actionButton.label}</span>
+                    </a>
+                  )}
+                </div>
+                
+                {/* Right side: Close button */}
                 <button 
                   onClick={() => setSelectedStrategyId(null)}
                   className="bg-excel-teal hover:brightness-90 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg shadow-excel-teal/30"
@@ -440,8 +456,6 @@ const App: React.FC = () => {
             {/* The Screen Area */}
             <div className="screen-frame">
               <iframe 
-                width="560" 
-                height="315"
                 src="https://www.youtube-nocookie.com/embed/3LxSjpqOu_M?autoplay=0&controls=1&rel=0&modestbranding=1" 
                 title="YouTube video player" 
                 frameBorder="0" 

@@ -12,7 +12,11 @@ export const STRATEGIES: Strategy[] = [
       'Werk de stapel af tot je alles kent.',
       'Tip: Gebruik tools zoals Quizlet, NotebookLM of papieren kaartjes.'
     ],
-    iconName: 'Layers'
+    iconName: 'Layers',
+    actionButton: {
+      label: 'Maak online flashcards',
+      url: 'https://flashcards-maken-app.vercel.app/'
+    }
   },
   {
     id: 'braindump',
@@ -173,7 +177,7 @@ export const SUBJECT_TIPS: SubjectTip[] = [
   // NATUURKUNDE
   { subject: "Natuurkunde", strategyId: "flashcards", tip: "Maak kaartjes met grootheden, eenheden en symbolen. Gebruik ze om formules te leren." },
   { subject: "Natuurkunde", strategyId: "tekenen", tip: "Maak bij elke vraag een schets van de situatie. Dit helpt je hersenen de stof te begrijpen." },
-  { subject: "Natuurkunde", strategyId: "mappen", tip: "Maak per paragraaf een concept map van alle begrippen met de bijbehorende formules." },
+  { subject: "Natuurkunde", strategyId: "mappen", tip: "Maak per paragraaf een conceptmap van alle begrippen met de bijbehorende formules." },
   { subject: "Natuurkunde", strategyId: "braindump", tip: "Doe een braindump direct na het lezen van een paragraaf. Herhaal dit na 1 dag." },
   { subject: "Natuurkunde", strategyId: "voorbeelden", tip: "Oefen de systematische probleemaanpak: Gegeven, Gevraagd, Formule, Berekening, Eenheid." },
 

@@ -13,6 +13,10 @@ export interface Strategy {
   howTo: string[];
   iconName: string;
   attention?: string;
+  actionButton?: {
+    label: string;
+    url: string;
+  };
 }
 
 export interface SubjectTip {
